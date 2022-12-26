@@ -15,7 +15,7 @@ export default function Card({ meetup }: Props) {
 
   const disabled = session?.user?.email === meetup.creator;
 
-  const url = process.env.NEXT_PUBLIC_URL + "/api/delete-meetup";
+  const url = process.env.NEXTAUTH_URL + "/api/delete-meetup";
   console.log("url is @card.jsx", url);
 
   const handleDelete = async () => {

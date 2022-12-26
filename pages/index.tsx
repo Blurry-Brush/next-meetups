@@ -21,7 +21,7 @@ function Home({ meetups }: Props) {
   );
 }
 
-const url = process.env.NEXT_PUBLIC_URL + "/api/get-meetups";
+const url = process.env.NEXTAUTH_URL + "/api/get-meetups";
 
 export const getServerSideProps = async () => {
   const {data} = await axios({

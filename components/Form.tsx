@@ -22,7 +22,7 @@ function Form() {
     e.preventDefault();
 
     const creator = session?.user?.email;
-    const url = process.env.NEXT_PUBLIC_URL + "/api/new-meetup";
+    const url = process.env.NEXTAUTH_URL + "/api/new-meetup";
 
     const payload = {
       title,
