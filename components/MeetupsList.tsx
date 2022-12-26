@@ -1,5 +1,4 @@
 import React from 'react'
-import dummyData from '../data'
 import Card from './Card'
 import {Data} from '../typings'
 import axios from 'axios'
