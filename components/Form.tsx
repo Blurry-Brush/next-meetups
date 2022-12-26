@@ -22,7 +22,9 @@ function Form() {
     e.preventDefault();
 
     const creator = session?.user?.email;
-    const url = process.env.NEXTAUTH_URL + "/api/new-meetup";
+    const deployedUrl = "https://next-meetups-production.up.railway.app";
+
+    const url = (process.env.NEXTAUTH_URL || deployedUrl) + "/api/new-meetup";
 
     const payload = {
       title,
