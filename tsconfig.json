@@ -15,6 +15,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/showDetail.jsx", "pages/_app.tsx", "pages/api/new-meetup.js"],
   "exclude": ["node_modules"]
 }
