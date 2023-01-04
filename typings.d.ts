@@ -5,4 +5,5 @@ export interface Data{
     image: string,
     address: string,
     creator: string,
+    date: string,
 }

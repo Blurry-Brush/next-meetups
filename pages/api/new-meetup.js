@@ -10,14 +10,15 @@ export default async function handler(req, res) {
   // const session = await unstable_getServerSession(req, res, authOptions)
 
   if (req.method === "POST") {
-    const { title, description, address, image, creator} = req.body;
-    console.log(req.body);
+    const { title, description, address, image, creator,date} = req.body;
+    console.log("req is ",req.body);
     const meetup = new MeetupModel({
       title,
       description,
       address,
       image,
       creator,
+      date,
     });
     meetup.save(function (err) {
       if (err) {

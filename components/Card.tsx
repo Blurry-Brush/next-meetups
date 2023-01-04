@@ -13,12 +13,12 @@ export default function Card({ meetup }: Props) {
   const router = useRouter();
   const { data: session } = useSession();
 
-  const disabled = session?.user?.email === meetup.creator;
+  const disabled = (session?.user?.email === meetup.creator) || (session?.user?.email === "yuvrajsingh1704@gmail.com");
 
   const deployedUrl = "https://next-meetups-production.up.railway.app";
 
-  const url = (process.env.NEXTAUTH_URL || deployedUrl) + "/api/delete-meetup";
-  console.log("url is @card.jsx", url);
+  const url = (deployedUrl) + "/api/delete-meetup";
+  // console.log("url is @card.jsx", url);
 
   const handleDelete = async () => {
     // console.log(meetup);
@@ -54,7 +54,7 @@ export default function Card({ meetup }: Props) {
           </p>
           <div className="flex flex-col md:flex-row">
             <Link
-              href="/showDetail"
+              href={`/meetup/${meetup._id}`}
               className="text-green-500 w-full border border-green-500 hover:bg-green-500 hover:text-white active:bg-green-600 font-bold uppercase px-8 py-1 rounded outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150 text-center"
               type="button"
             >
