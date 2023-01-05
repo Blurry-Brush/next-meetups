@@ -8,8 +8,8 @@ import {
 } from "@mui/material";
 import Avatar from "@mui/material/Avatar";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
-import EmailIcon from '@mui/icons-material/Email';
+import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
+import EmailIcon from "@mui/icons-material/Email";
 import { Data } from "../typings";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
@@ -34,10 +34,10 @@ const randomColors = [
 ];
 
 function DetailsCard({ meetup }: Props) {
-    var meetupDate = new Date(meetup.date);
-   
+  var meetupDate = new Date(meetup.date);
+
   return (
-    <Card sx={{ maxWidth: 500, mx: [5,'auto'], mt: 5 , pb: 1}}>
+    <Card sx={{ maxWidth: 500, mx: [5, "auto"], mt: 5, pb: 1 }}>
       <CardHeader
         avatar={
           <Avatar
@@ -68,14 +68,27 @@ function DetailsCard({ meetup }: Props) {
         <Typography variant="body2" color="text.secondary">
           {meetup.description}
         </Typography>
-        <Stack direction="row" sx={{mt: 2}} spacing={1}>
-          <Chip icon={<LocationOnIcon />} label={meetup.address}/>
-          <Chip icon={<CalendarTodayIcon sx={{fontSize: 'medium'}} />} label={meetupDate.toDateString()} variant="outlined"/>
+        <Stack
+          direction={{ xs: "column", md: "row" }}
+          sx={{ mt: 2 }}
+          spacing={1}
+        >
+          <Chip icon={<LocationOnIcon />} label={meetup.address} />
+          <Chip
+            icon={<CalendarTodayIcon sx={{ fontSize: "medium" }} />}
+            label={meetupDate.toDateString()}
+            variant="outlined"
+          />
         </Stack>
       </CardContent>
 
       <CardActions>
-        <Button color="error" variant="outlined" startIcon={<EmailIcon/>} href={`mailto:${meetup.creator}`}>
+        <Button
+          color="error"
+          variant="outlined"
+          startIcon={<EmailIcon />}
+          href={`mailto:${meetup.creator}`}
+        >
           Contact Organizer
         </Button>
       </CardActions>
