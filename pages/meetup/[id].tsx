@@ -19,7 +19,12 @@ function MeetupDetails() {
   });
   const [loading, setLoading] = useState(true);
 
+<<<<<<< HEAD
   const baseUrl = "https://next-meetups.onrender.com";
+=======
+  // const baseUrl = "https://stirring-cupcake-b97d3c.netlify.app/";
+  const baseUrl = process.env.NEXT_PUBLIC_URL;
+>>>>>>> 1e054643bda89bf3fd502efa4110f5a92c7169ea
   const url = baseUrl + `/api/get-meetup/${id}`;
 
   const getCurrentMeetupData = async () => {

@@ -15,7 +15,11 @@ export default function Card({ meetup }: Props) {
 
   const disabled = (session?.user?.email === meetup.creator) || (session?.user?.email === "yuvrajsingh1704@gmail.com");
 
+<<<<<<< HEAD
   const deployedUrl = "https://next-meetups.onrender.com";
+=======
+  const deployedUrl = process.env.NEXT_PUBLIC_URL;
+>>>>>>> 1e054643bda89bf3fd502efa4110f5a92c7169ea
 
   const url = (deployedUrl) + "/api/delete-meetup";
   // console.log("url is @card.jsx", url);

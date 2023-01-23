@@ -41,7 +41,7 @@ function Form() {
 
     setOpen(true);
     const creator = session?.user?.email;
-    const deployedUrl = "https://next-meetups.onrender.com";
+    const deployedUrl = process.env.NEXT_PUBLIC_URL;
 
     //TODO: remove this line before deployment
     const url = (deployedUrl) + "/api/new-meetup";
