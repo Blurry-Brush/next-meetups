@@ -19,7 +19,8 @@ function MeetupDetails() {
   });
   const [loading, setLoading] = useState(true);
 
-  const baseUrl = "https://stirring-cupcake-b97d3c.netlify.app/";
+  // const baseUrl = "https://stirring-cupcake-b97d3c.netlify.app/";
+  const baseUrl = process.env.NEXT_PUBLIC_URL;
   const url = baseUrl + `/api/get-meetup/${id}`;
 
   const getCurrentMeetupData = async () => {

@@ -15,7 +15,7 @@ export default function Card({ meetup }: Props) {
 
   const disabled = (session?.user?.email === meetup.creator) || (session?.user?.email === "yuvrajsingh1704@gmail.com");
 
-  const deployedUrl = "https://stirring-cupcake-b97d3c.netlify.app/";
+  const deployedUrl = process.env.NEXT_PUBLIC_URL;
 
   const url = (deployedUrl) + "/api/delete-meetup";
   // console.log("url is @card.jsx", url);

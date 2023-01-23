@@ -41,7 +41,7 @@ function Form() {
 
     setOpen(true);
     const creator = session?.user?.email;
-    const deployedUrl = "https://stirring-cupcake-b97d3c.netlify.app/";
+    const deployedUrl = process.env.NEXT_PUBLIC_URL;
 
     //TODO: remove this line before deployment
     const url = (deployedUrl) + "/api/new-meetup";
