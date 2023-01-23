@@ -19,7 +19,7 @@ function MeetupDetails() {
   });
   const [loading, setLoading] = useState(true);
 
-  const baseUrl = "https://next-meetups-production.up.railway.app";
+  const baseUrl = "https://next-meetups.onrender.com";
   const url = baseUrl + `/api/get-meetup/${id}`;
 
   const getCurrentMeetupData = async () => {
