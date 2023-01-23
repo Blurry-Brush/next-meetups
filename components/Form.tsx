@@ -41,7 +41,7 @@ function Form() {
 
     setOpen(true);
     const creator = session?.user?.email;
-    const deployedUrl = "https://next-meetups.onrender.com";
+    const deployedUrl = "https://main--stirring-cupcake-b97d3c.netlify.app";
 
     //TODO: remove this line before deployment
     const url = (deployedUrl) + "/api/new-meetup";

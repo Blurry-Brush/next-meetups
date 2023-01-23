@@ -18,7 +18,7 @@ function Home({ meetups }: Props) {
   );
 }
 
-const url = "https://next-meetups.onrender.com" + "/api/get-meetups";
+const url = "https://main--stirring-cupcake-b97d3c.netlify.app" + "/api/get-meetups";
 
 export const getServerSideProps = async () => {
   const {data} = await axios({
