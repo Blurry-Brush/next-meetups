@@ -25,7 +25,7 @@ function Home({ meetups, base_url }: Props) {
 
 export const getServerSideProps = async () => {
   const {data} = await axios({
-    url: process.env.PROD_URL + "/api/get-meetups",
+    url: process.env.NEXTAUTH_URL + "/api/get-meetups",
     // url: url,
     method: "GET",
   }) 
@@ -33,7 +33,7 @@ export const getServerSideProps = async () => {
   return {
     props: {
       meetups: data,
-      base_url: process.env.PROD_URL
+      base_url: process.env.NEXTAUTH_URL
     }
   }
 }
