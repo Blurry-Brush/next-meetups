@@ -8,6 +8,8 @@ import Headertest from "./Headertest";
 import TextField from "@mui/material/TextField";
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
+import { useContext } from "react";
+import UrlContext from '../context/UrlContext'
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
   props,
@@ -24,9 +26,11 @@ function Form() {
   const [date, setDate] = useState("2023-01-01");
   const [open,setOpen] = useState(false);
 
+  const {mainUrl} = useContext(UrlContext);
+
   const router = useRouter();
   const { data: session } = useSession();
-
+  
   const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
     if (reason === 'clickaway') {
       return;
@@ -41,7 +45,11 @@ function Form() {
 
     setOpen(true);
     const creator = session?.user?.email;
-    const deployedUrl = "https://main--stirring-cupcake-b97d3c.netlify.app";
+    // const deployedUrl = "https://main--stirring-cupcake-b97d3c.netlify.app";
+    // const deployedUrl = (window.location.href).slice(0, (window.location.href).length - 10);
+    const deployedUrl = mainUrl;
+    // console.log("dep",deployedUrl);
+    
 
     //TODO: remove this line before deployment
     const url = (deployedUrl) + "/api/new-meetup";

@@ -7,11 +7,11 @@ import Headertest from '../components/Headertest'
 function addMeetup() {
 const {data : session} = useSession()
 
-
-  if(session){
-
-    return (
-      <div> 
+if(session){
+  
+  return (
+    <div> 
+        
         <Form /> 
       </div>
     )

@@ -4,25 +4,27 @@ import MeetupsList from "../components/MeetupsList";
 import { Data } from "../typings";
 interface Props {
   meetups: Data[]
+  base_url: string
 }
 // require('dotenv').config()
 
 
-function Home({ meetups }: Props) {
+function Home({ meetups, base_url }: Props) {
+
   return (
     <>
       {/* <Header /> */}
       <Headertest />
-      <MeetupsList meetups={meetups} />
+      <MeetupsList base_url={base_url} meetups={meetups} />
     </>
   );
 }
-
-const url = "https://main--stirring-cupcake-b97d3c.netlify.app" + "/api/get-meetups";
+// console.log("location is",window.location.href);
+// const url = process.env.NEXT_PUBLIC_URL + "/api/get-meetups";
 
 export const getServerSideProps = async () => {
   const {data} = await axios({
-    url: url,
+    url: process.env.URL + "/api/get-meetups",
     // url: url,
     method: "GET",
   }) 
@@ -30,6 +32,7 @@ export const getServerSideProps = async () => {
   return {
     props: {
       meetups: data,
+      base_url: process.env.URL
     }
   }
 }

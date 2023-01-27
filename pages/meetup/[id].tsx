@@ -4,6 +4,8 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import DetailsCard from "../../components/DetailsCard";
 import Loading from "../../components/Loading";
+import { useContext } from "react";
+import UrlContext from '../../context/UrlContext'
 
 function MeetupDetails() {
   const router = useRouter();
@@ -18,9 +20,8 @@ function MeetupDetails() {
     date: "",
   });
   const [loading, setLoading] = useState(true);
-
-  const baseUrl = "https://main--stirring-cupcake-b97d3c.netlify.app";
-  const url = baseUrl + `/api/get-meetup/${id}`;
+  const {mainUrl} = useContext(UrlContext);
+  const url = mainUrl + `/api/get-meetup/${id}`;
 
   const getCurrentMeetupData = async () => {
     try {
@@ -53,3 +54,4 @@ function MeetupDetails() {
 }
 
 export default MeetupDetails;
+

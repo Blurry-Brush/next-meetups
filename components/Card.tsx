@@ -7,17 +7,20 @@ import { useSession } from "next-auth/react";
 
 interface Props {
   meetup: Data;
+  base_url: string;
 }
 
-export default function Card({ meetup }: Props) {
+export default function Card({ meetup,base_url }: Props) {
   const router = useRouter();
   const { data: session } = useSession();
 
   const disabled = (session?.user?.email === meetup.creator) || (session?.user?.email === "yuvrajsingh1704@gmail.com");
 
-  const deployedUrl = "https://main--stirring-cupcake-b97d3c.netlify.app";
+  // const deployedUrl = "https://main--stirring-cupcake-b97d3c.netlify.app";
+  // const deployedUrl = window.location.href;
 
-  const url = (deployedUrl) + "/api/delete-meetup";
+  // console.log('base_url',base_url);
+  const url = (base_url) + "/api/delete-meetup";
   // console.log("url is @card.jsx", url);
 
   const handleDelete = async () => {
