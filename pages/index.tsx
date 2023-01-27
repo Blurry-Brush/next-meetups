@@ -21,6 +21,7 @@ function Home({ meetups, base_url }: Props) {
 }
 // console.log("location is",window.location.href);
 // const url = process.env.NEXT_PUBLIC_URL + "/api/get-meetups";
+//hello
 
 export const getServerSideProps = async () => {
   const {data} = await axios({
