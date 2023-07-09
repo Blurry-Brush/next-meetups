@@ -2,6 +2,8 @@ import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import axios from "axios";
 
+
+const url = process.env.NEXTAUTH_URL;
 export default NextAuth({
   providers: [
     GoogleProvider({
@@ -23,7 +25,7 @@ export default NextAuth({
       console.log(payload);
       try {
         const {data} = await axios({
-          url: "http://localhost:3000/api/add-user",
+          url: url + "/api/add-user",
           method: "POST",
           data: payload,
         }) 
