@@ -28,7 +28,7 @@ export const getServerSideProps = async () => {
     url: process.env.NEXTAUTH_URL + "/api/get-meetups",
     // url: url,
     method: "GET",
-  }) 
+  });
 
   return {
     props: {
