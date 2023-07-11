@@ -89,7 +89,7 @@ function DetailsCard({ meetup }: Props) {
           startIcon={<EmailIcon />}
           href={`mailto:${meetup.creator}`}
         >
-          Contact Organizer
+          Contact Organizer of meetup
         </Button>
       </CardActions>
     </Card>
